@@ -35,7 +35,7 @@ function draw() {
     left.rotate(180+atan2(-tranY,-tranX))
     left.rect(0,-50,-10,250)
     left.pop()
-    
+
     for(var i = 0; i < star; i++){
       if(starbeams[i].checkOutBounds()){
         starbeams[i] = new particle([random(-125,125),random(-125,125)],[1,1],0,[left.width,left.height],[255,255,25,255])
@@ -56,28 +56,32 @@ function draw() {
     right.rect(0,0,right.width/2,100)
     right.triangle() //here
     right.pop()
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    right.push()
+    right.translate(right.width/4,right.height-125)
+    right.fill(50,125,50)
+    right.rect(0,0,50,50)
+    right.pop()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     main.line(main.width/2,0,main.width/2,main.height-(main.height-right.height)/2)
     main.textAlign(CENTER,CENTER)
     main.textSize(24)
     main.text("Solar Panels",left.width/2,(main.height-right.height)/4)
     main.text("Fossil Fuels",right.width/2+main.width/2+1,(main.height-right.height)/4)
     main.text("Which one will be safer for your kids to breathe?",main.width/2,main.height-(main.height-right.height)/4)
-    
+
     image(left,0,(main.height-left.height)/2,left.width-1,left.height)
     image(right,main.width/2+1,(main.height-right.height)/2,right.width,right.height)
 
