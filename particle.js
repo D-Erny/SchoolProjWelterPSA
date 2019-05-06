@@ -33,6 +33,14 @@ class particle{
 		this.cvy = 5*map(noise(this.ry*this.vy*5,1*this.vy),0,1,-4,4)
 		this.yi = random(-1,1)
 	}
+    checkOutBounds(){
+        if(((this.x + this.cvx)<0)|((this.x + this.cvx) > this.max)|((this.y + this.cvy) < 0)|((this.y + this.cvy) >= this.may)){
+                    return true
+        }
+                else{
+                    return false
+                }
+    }
 	move(){
 		if(this.wrap){
 			if((this.x + this.cvx)<=0){
@@ -51,15 +59,15 @@ class particle{
 		this.x = (this.x + this.cvx)
 		this.y = (this.y + this.cvy)
 	}
-	show(){
-		push()
-		translate(this.x,this.y)
+	show(canv){
+		canv.push()
+		canv.translate(this.x,this.y)
 		this.sclx = 9
 		this.scly = 9
-		scale(this.sclx,this.scly)
-		fill(this.red,this.green,this.blue,this.alpha)
-		noStroke()
-		ellipse(0,0,1,1)
-		pop()
+		canv.scale(this.sclx,this.scly)
+		canv.fill(this.red,this.green,this.blue,this.alpha)
+		canv.noStroke()
+		canv.ellipse(0,0,1,1)
+		canv.pop()
 	}
 }
