@@ -57,9 +57,14 @@ function draw() {
     right.triangle() //here
     right.pop()
     right.push()
-    right.translate(right.width/4,right.height-125)
-    right.fill(50,125,50)
-    right.rect(0,0,50,50)
+    right.translate(right.width*3/4-30,right.height-250)
+    right.fill(50,50,50)
+    right.rect(0,0,25,125)
+    right.translate(-right.width*1/5,0)
+    right.fill(50,50,50)
+    right.rect(0,0,25,125)
+
+
     right.pop()
 
 
